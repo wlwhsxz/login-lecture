@@ -11,4 +11,12 @@ function login() {
         id: id.value, // xx.value 로 값 받아오기
         pw: pw.value
     };
-}
+
+    fetch('/login', { // /login 경로로 object 형태의 값을 전달
+        method: "POST",
+        headers: {
+            "Content Type" : "applicaiotn/json",
+        },
+        body: JSON.stringify(req),
+    });
+};
