@@ -9,14 +9,18 @@ loginBtn.addEventListener("click", login); // click 이벤트 발생 시 login �
 function login() {
     const req = {
         id: id.value, // xx.value 로 값 받아오기
-        pw: pw.value
+        pw: pw.value,
     };
 
-    fetch('/login', { // /login 경로로 object 형태의 값을 전달
+    fetch("http://localhost:8080/login", { // 브라우저에서 입력한 id,pw를 /login 경로로 object 형태의 값을 전달
         method: "POST",
         headers: {
-            "Content Type" : "applicaiotn/json",
+            "Content-Type" : "applicaiotn/json",
         },
         body: JSON.stringify(req),
+    })
+    .then((res) => res.json())
+    .then((res) => {
+
     });
 };
